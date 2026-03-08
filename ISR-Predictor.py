@@ -410,7 +410,7 @@ def show_report(res):
             The model has identified a high probability of <b>In-stent Restenosis (ISR)</b>. 
             <br><br>
             <b>🩺 Clinical Recommendation:</b><br>
-            Immediate consultation with a urologist is recommended. Consider multiparametric MRI or biopsy for confirmation.
+            Immediate consultation with a cardiologist is recommended. Consider cardiac imaging or coronary angiography for confirmation.
         </div>
         """, unsafe_allow_html = True)
         
