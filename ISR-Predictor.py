@@ -343,20 +343,20 @@ def get_progress_bar_html(label, prob, color, threshold = None):
 @st.dialog("📊 Diagnostic Report", width = 'large')
 def show_report(res):
     gp = res['global_probs']
-    ph, pb, pp = gp['Healthy']*100, gp['BPH']*100, gp['PCa']*100
+    ph, pb, pp = gp['Healthy']*100, gp['RA']*100, gp['ISR']*100
     
     st.markdown(f"""
     <div style="margin-bottom:20px;">
         <div style="font-weight:bold; margin-bottom:5px;">Global Probability Distribution</div>
         <div style="display:flex; height:20px; border-radius:10px; overflow:hidden; width:100%;">
             <div style="width:{ph}%; background:#28a745;" title="Healthy"></div>
-            <div style="width:{pb}%; background:#fd7e14;" title="BPH"></div>
-            <div style="width:{pp}%; background:#dc3545;" title="PCa"></div>
+            <div style="width:{pb}%; background:#fd7e14;" title="RA"></div>
+            <div style="width:{pp}%; background:#dc3545;" title="ISR"></div>
         </div>
         <div style="display:flex; gap:15px; font-size:0.8rem; margin-top:5px; color:#555;">
             <span style="color:#28a745">■ Healthy ({ph:.1f}%)</span>
-            <span style="color:#fd7e14">■ BPH ({pb:.1f}%)</span>
-            <span style="color:#dc3545">■ PCa ({pp:.1f}%)</span>
+            <span style="color:#fd7e14">■ RA ({pb:.1f}%)</span>
+            <span style="color:#dc3545">■ ISR ({pp:.1f}%)</span>
         </div>
     </div>
     <hr style="margin: 10px 0;">
@@ -383,8 +383,8 @@ def show_report(res):
             color = '#dc3545' if is_pca else '#fd7e14'
             st.markdown(f"""
             <div class="result-card" style="border-left: 5px solid {color}">
-                <div class="card-header">2️⃣ Diagnosis <span class="card-sub">(BPH vs. PCa)</span></div>
-                <div style="font-size:1.2rem; font-weight:bold;">{'PCa (Malignant)' if is_pca else 'BPH (Benign)'}</div>
+                <div class="card-header">2️⃣ Diagnosis <span class="card-sub">(RA vs. ISR)</span></div>
+                <div style="font-size:1.2rem; font-weight:bold;">{'ISR (In-stent Restenosis)' if is_pca else 'RA (Recurrent Angina)'}</div>
                
             </div>
             """, unsafe_allow_html = True)
