@@ -256,13 +256,13 @@ c1, c2, c3, c4 = st.columns(4)
 age = c1.number_input('Age (year)', 0, 120, 76, step = 1, help = "Patient's age.")
 
 # TPSA (Used in Screening & Diagnosis)
-tpsa = c2.number_input('SM(d18:1/16:2)', 0.0, 1000.0, 7.44, format = '%.2f', step = 0.01, help = 'SM(d18:1/16:2)')
+tpsa = c2.number_input('DHC(18:1/24:0)', 0.0, 1000.0, 7.44, format = '%.2f', step = 0.01, help = 'DHC(18:1/24:0)')
 
 # FPSA (Used in Screening, and for Ratio calculation)
 fpsa = c3.number_input('Ceramide(d18:1/16:0)', 0.0, 1000.0, 2.06, format = '%.3f', step = 0.001, help = 'Ceramide(d18:1/16:0)')
 
 # AFP (Used in Diagnosis Interaction)
-afp = c4.number_input('Quinolinic Acid', 0.0, 1000.0, 2.57, format = '%.2f', step = 0.01, help = 'Quinolinic Acid (QUIN)')
+afp = c4.number_input('Indoxyl Sulfate', 0.0, 1000.0, 2.57, format = '%.2f', step = 0.01, help = 'Indoxyl Sulfate')
 
 # Ratio Calculation Display
 ratio_val = fpsa / tpsa if tpsa > 0 else 0.0
@@ -316,7 +316,7 @@ urea = c1.number_input('Urea (mmol/L)', 0.0, 1000.0, 9.90, format = '%.2f', step
 apoe = c2.number_input('L-Palmitoylcarnitine', 0.0, 10000.0, 87.2807625748426, format = '%.2f', step = 0.01, help = 'L-Palmitoylcarnitine')
 
 # AR+TREM2+ (Used in Interactions for both models)
-ar_trem2_pos = c3.number_input('Adipic Acid', 0.0, 1.0, 0.108, format = '%.3f', step = 0.001, help = 'Adipic Acid')
+ar_trem2_pos = c3.number_input('Butrylcarnitine', 0.0, 1.0, 0.108, format = '%.3f', step = 0.001, help = 'Butrylcarnitine')
 
 # --------------------------------------------------
 # Result Display Function
